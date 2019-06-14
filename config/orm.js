@@ -25,12 +25,11 @@ function objToSql(ob) {
         var value = ob[key];
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+            // if string with spaces, add quotations 
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
+
             arr.push(key + "=" + value);
         }
     }
@@ -61,10 +60,9 @@ var orm = {
             cb(result);
         });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+
     updateOne: function (burger_name, devoured, cb) {
         //update in burgers table, change devoured property to what is specified in front end
-
         connection.query(`UPDATE burgers SET devoured = ? WHERE burger_name = ?`, [devoured, burger_name], function (err, result) {
             if (err) {
                 throw err;
