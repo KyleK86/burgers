@@ -23,13 +23,15 @@ router.post("/api/burgers", function (req, res) {
 
 
 router.put("/api/burgers/", function (req, res) {
-    burger.create(req.body.burger_name, req.body.devoured, function (burger) {
+    burger.update(req.body.burger_name, req.body.devoured, function (burger) {
         res.send(burger)
-    });
+    })
+});
 
 
-    router.delete("/api/burgers/", function (req, res) {
-
+router.delete("/api/burgers/", function (req, res) {
+    burger.delete(req.body.burger_name, req.body.devoured, function (burger) {
+        res.send(burger)
     })
 });
 
