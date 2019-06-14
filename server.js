@@ -1,33 +1,33 @@
-/////////////////////////////////////////////// /* Imports */ //////////////////////////////////////////////////////////
-const express = require("express"); // Server
-const bodyParser = require("body-parser"); // Allows JSON Body from POST Request to be Accessed
-const exphbs = require("express-handlebars"); // Require Templating Engine Handlebars
+var express = require("express");
 
-/////////////////////////////////////////////// /* Configure Server */ //////////////////////////////////////////////////////////
-const app = express(); // Initalise Express Server
+var PORT = process.env.PORT || 8080;
 
-let PORT = process.env.PORT || 8080; // Set Default Port for Express and Heroku
-app.use(bodyParser.urlencoded({
-    extended: false
-})); // Add Additional Functionality to Express Using Middleware body-parser
-app.use(express.static("public")); // Serve Static Content Such as CSS, JS, for the App from the "public" Directory in the Application Directory.
+var app = express();
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// Parse application body
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));
 app.set("view engine", "handlebars");
 
-
 // Import routes and give the server access to them.
-// require("./controllers/burgersController.js")(app);
+// var routes = require("./controllers/burgersController.js");
 
-// Equivalent???
-// const routes = require("./controllers/burgersController.js");
-// app.use("/", routes);
+// app.use(routes);
 
-
-/////////////////////////////////////////////// /* Start The Server */ //////////////////////////////////////////////////////////
-// Starts the server to begin listening
+// Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
 });
