@@ -71,7 +71,7 @@ var orm = {
         });
     },
     deleteOne: function (burger_name, cb) {
-        connection.query(`DELETE FROM burgers WHERE burger_name = ?`, [burger_nam], function (err, result) {
+        connection.query(`DELETE FROM burgers WHERE burger_name = ?`, [burger_name], function (err, result) {
             if (err) {
                 throw err;
             }
