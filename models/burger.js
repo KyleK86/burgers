@@ -1,19 +1,24 @@
 const orm = require("../config/orm.js");
 
-const cat = {
+const burger = {
     all: function (cb) {
-        orm.all("burgers", function (res) {
+        orm.selectAll("burgers", function (res) {
             cb(res);
         });
     },
     // The variables cols and vals are arrays.
-    create: function (cols, vals, cb) {
-        orm.create("burgers", cols, vals, function (res) {
+    create: function (burger_name, devoured, cb) {
+        orm.insertOne(burger_name, devoured, function (res) {
             cb(res);
         });
     },
-    update: function (objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function (res) {
+    update: function (burger_name, devoured, cb) {
+        orm.updateOne(burger_name, devoured, function (res) {
+            cb(res);
+        });
+    },
+    delete: function (burger_name, cb) {
+        orm.deleteOne(burger_name, function (res) {
             cb(res);
         });
     }

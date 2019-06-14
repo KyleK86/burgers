@@ -50,45 +50,37 @@ var orm = {
             cb(result);
         });
     },
-    insertOne: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
+    insertOne: function (burger_name, devoured, cb) {
 
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
 
-        console.log(queryString);
 
-        connection.query(queryString, vals, function (err, result) {
+        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?,?)`, [burger_name, devoured], function (err, result) {
             if (err) {
                 throw err;
             }
-
             cb(result);
         });
     },
     // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne: function (table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
+    updateOne: function (burger_name, devoured, cb) {
+        //update in burgers table, change devoured property to what is specified in front end
 
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
-
-        console.log(queryString);
-        connection.query(queryString, function (err, result) {
+        connection.query(`UPDATE burgers SET devoured = ? WHERE burger_name = ?`, [devoured, burger_name], function (err, result) {
             if (err) {
                 throw err;
             }
-
             cb(result);
         });
+    },
+    deleteOne: function (burger_name, cb) {
+        connection.query(`DELETE FROM burgers WHERE burger_name = ?`, [burger_nam], function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
     }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
