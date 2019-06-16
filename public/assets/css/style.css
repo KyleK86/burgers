@@ -29,18 +29,18 @@ li {
 
 .container {
     padding: 20px;
+
 }
 
-.col {
-    padding: 20px;
-}
 
 #left {
-    padding-right: 10px;
+
+    background: rgba(255, 254, 254, 0.521);
 }
 
 #right {
-    padding-left: 10px;
+
+    background: rgba(255, 254, 254, 0.521);
 }
 
 h1,
@@ -50,4 +50,30 @@ h2 {
 
 h1 {
     font-size: 56px;
+}
+
+#header {
+    background: rgba(255, 254, 254, 0.521);
+    margin-bottom: 15px;
+    -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#form {
+    background: rgba(255, 254, 254, 0.521);
+    margin-top: 15px;
+    -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#burgers {
+    -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+ol {
+    display: inline-block;
 }

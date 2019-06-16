@@ -1,39 +1,38 @@
-<div class="container text-center border border-danger" id="header">
+<div class="container">
     <div class="row">
-        <div class="col-sm">
+        <div class="head-wrap  text-center col-sm-12" id="header">
             <h1>BURGERS!</h1>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg text-center border border-danger" id="left">
+
+    <div class="row no gutters" id="burgers">
+        <div class="col-sm-6 text-center" id="left">
             <h2>Ready to Eat</h2>
-            <ul>
+            <ol>
                 {{#each burgers}}
                 {{#unless devoured}}
                 {{> burgers/burgerBlock devoured=true}}
                 {{/unless}}
                 {{/each}}
-            </ul>
+            </ol>
         </div>
-        <div class="col-lg text-center border border-danger" id="right">
+        <div class="col-sm-6 text-center" id="right">
             <h2>Devoured</h2>
-            <ul>
+            <ol>
                 {{#each burgers}}
                 {{#if devoured}}
                 {{> burgers/burgerBlock devoured=false}}
                 {{/if}}
                 {{/each}}
-            </ul>
+            </ol>
         </div>
     </div>
-</div>
 
-<div class="container text-center border border-danger">
+
     <div class="row">
-        <div class="col-sm">
+        <div class="add-wrap text-center col-sm-12" id="form">
+
             <h2>Add a Burger</h2>
 
             <form class="create-form">
@@ -43,14 +42,9 @@
                     <input type="text" id="ca" name="name">
                 </div>
 
-                <div class="form-group">
-                    <label for="devoured">Devoured?</label><br>
-                    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-                    <input type="radio" name="devoured" value="0"> Ready
-                </div>
-
                 <button type="submit">Add Burger</button>
             </form>
+
         </div>
     </div>
 </div>
