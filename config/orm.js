@@ -40,7 +40,7 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
-    selectAll: function (tableInput, cb) {
+    all: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -49,7 +49,7 @@ var orm = {
             cb(result);
         });
     },
-    insertOne: function (burger_name, devoured, cb) {
+    create: function (burger_name, devoured, cb) {
 
 
 
@@ -61,22 +61,34 @@ var orm = {
         });
     },
 
-    updateOne: function (burger_name, devoured, cb) {
-        //update in burgers table, change devoured property to what is specified in front end
-        connection.query(`UPDATE burgers SET devoured = ? WHERE burger_name = ?`, [devoured, burger_name], function (err, result) {
+    update: function (table, objColVals, condition, cb) {
+        var queryString = "UPDATE " + table;
+
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+    },
+    delete: function (table, condition, cb) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
             cb(result);
         });
-    },
-    deleteOne: function (burger_name, cb) {
-        connection.query(`DELETE FROM burgers WHERE burger_name = ?`, [burger_name], function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        })
     }
 };
 
