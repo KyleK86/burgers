@@ -9,7 +9,9 @@ body {
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+
+    font-size: xx-large;
+    color: black;
 }
 
 .label {
@@ -48,13 +50,20 @@ li {
     box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+h2 {
+    font-weight: bold;
+    color: darkred;
+}
+
 h1,
 h2 {
-    color: Black;
+
+    border-radius: .25rem;
 }
 
 h1 {
     font-size: 56px;
+    color: Black;
 }
 
 #header {
@@ -87,4 +96,10 @@ ol {
 
 #burger-row {
     justify-content: space-evenly;
+}
+
+button {
+    -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
