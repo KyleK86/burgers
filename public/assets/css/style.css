@@ -1,7 +1,6 @@
 body {
     background-image: url(http://www.parkburger.com/wp-content/uploads/2013/12/parkburger2014_1-e1418779604540.jpg);
     background-size: cover;
-    background-blend-mode: inherit;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -36,11 +35,17 @@ li {
 #left {
 
     background: rgba(255, 254, 254, 0.521);
+    -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #right {
 
     background: rgba(255, 254, 254, 0.521);
+    -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 h1,
@@ -58,6 +63,7 @@ h1 {
     -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: .25rem;
 }
 
 #form {
@@ -66,6 +72,7 @@ h1 {
     -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: .25rem;
 }
 
 #burgers {
@@ -76,4 +83,8 @@ h1 {
 
 ol {
     display: inline-block;
+}
+
+#burger-row {
+    justify-content: space-evenly;
 }

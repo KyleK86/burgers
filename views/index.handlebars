@@ -6,26 +6,34 @@
     </div>
 
 
-    <div class="row no gutters" id="burgers">
-        <div class="col-sm-6 text-center" id="left">
-            <h2>Ready to Eat</h2>
-            <ol>
-                {{#each burgers}}
-                {{#unless devoured}}
-                {{> burgers/burgerBlock devoured=true}}
-                {{/unless}}
-                {{/each}}
-            </ol>
+    <div class="row" id="burger-row">
+        <div class="card col-md-5" id="left">
+            <div class="card-body text-center">
+                <div class="content-left">
+                    <h2>Ready to Eat</h2>
+                    <ol>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        {{> burgers/burgerBlock devoured=true}}
+                        {{/unless}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6 text-center" id="right">
-            <h2>Devoured</h2>
-            <ol>
-                {{#each burgers}}
-                {{#if devoured}}
-                {{> burgers/burgerBlock devoured=false}}
-                {{/if}}
-                {{/each}}
-            </ol>
+        <div class="card col-md-5" id="right">
+            <div class="card-body text-center">
+                <div class="content-right">
+                    <h2>Devoured</h2>
+                    <ol>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        {{> burgers/burgerBlock devoured=false}}
+                        {{/if}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
 
