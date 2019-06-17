@@ -1,7 +1,7 @@
 body {
     background-image: url(http://www.parkburger.com/wp-content/uploads/2013/12/parkburger2014_1-e1418779604540.jpg);
     background-size: cover;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
@@ -9,13 +9,14 @@ body {
 li {
     padding: 5px;
     margin: 5px;
-
-    font-size: xx-large;
+    letter-spacing: 2px;
+    font-size: larger;
     color: black;
+    font-weight: bold;
 }
 
 .label {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .create-update-form {
@@ -36,7 +37,7 @@ li {
 
 #left {
 
-    background: rgba(255, 254, 254, 0.521);
+    background: rgba(255, 254, 254, 0.6);
     -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -44,7 +45,7 @@ li {
 
 #right {
 
-    background: rgba(255, 254, 254, 0.521);
+    background: rgba(255, 254, 254, 0.6);
     -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -53,21 +54,23 @@ li {
 h2 {
     font-weight: bold;
     color: darkred;
+    text-shadow: 2px 1px black;
 }
 
 h1,
 h2 {
-
+    letter-spacing: 1px;
     border-radius: .25rem;
 }
 
 h1 {
     font-size: 56px;
     color: Black;
+    text-shadow: 2px 2px darkred;
 }
 
 #header {
-    background: rgba(255, 254, 254, 0.521);
+    background: rgba(255, 254, 254, 0.6);
     margin-bottom: 15px;
     -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -102,4 +105,5 @@ button {
     -webkit-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 15px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    letter-spacing: 1px;
 }
